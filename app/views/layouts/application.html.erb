@@ -7,23 +7,65 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default"> 
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-        Wellness United</a>
-      </div>
-    </div>
-  </nav>
 
-  <div class="left-nav">
+<!-- Navigation -->
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+      <div class="navbar-header">
+        <%= link_to root_path, class: "navbar-brand logo" do %>
+         <a class="navbar-brand" href="#">Wellness United</a>
+        <% end %>
+      </div>
+
+      <div class="collapse navbar-collapse">
+
+        <div id="log_in_area" class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+          <span>
+            <%= link_to edit_user_registration_path, class: "btn btn-info" do %>
+            <span class="glyphicon glyphicon-edit"></span> Edit profile
+            <% end %>  
+
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-default" %>
+            <% else %>
+            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-info" %> 
+
+            <%= link_to new_user_session_path, class: "btn btn-default" do %>
+            <span class="glyphicon glyphicon-flash"></span> Login
+            <% end %>  
+          </span>
+          <% end %>
+        </div> 
+
+        <ul class="nav navbar-nav navbar-left">
+
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+  <!-- /Navigation -->
+
+
+
+  <nav>
     <ul>
       <li><a href="#">Clinic search</a></li>
-      <li><a href="#">Add Clinic</a></li>
+      <li><%= link_to 'Add Clinic', new_clinic_path %></li>
     </ul>
-  </div>
+  </nav>
 
 <%= yield %>
 
+
+<script type="text/javascript" href="//cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/5.0.4/js/jquery.mmenu.min.js"></script>
+
+<script type="text/javascript">
+   $(document).ready(function() {
+      $("#my-menu").mmenu();
+   });
+</script>
 </body>
 </html>

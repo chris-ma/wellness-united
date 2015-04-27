@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150427053634) do
     t.string   "monday"
     t.string   "tuesday"
     t.string   "wednesday"
-    t.string   "thrursday"
+    t.string   "thursday"
     t.string   "friday"
     t.string   "saturday"
     t.string   "sunday"

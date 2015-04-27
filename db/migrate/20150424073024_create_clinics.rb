@@ -9,7 +9,7 @@ class CreateClinics < ActiveRecord::Migration
       t.string :monday
       t.string :tuesday
       t.string :wednesday
-      t.string :thrursday
+      t.string :thursday
       t.string :friday
       t.string :saturday
       t.string :sunday
