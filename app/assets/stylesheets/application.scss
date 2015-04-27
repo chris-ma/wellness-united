@@ -14,3 +14,11 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
+.left-nav {
+  float: left;
+  min-height: 100vh;
+  width: 150px;
+  margin: auto 0;
+  padding: 10px;
+  border-right: 1px solid gray;
+}
